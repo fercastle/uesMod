@@ -6,8 +6,9 @@
     <meta lang="es">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $parameters['title']?></title>
+    <link rel="icon" href="img/logominsal.png" type="logominsal/png" size="16x16">
     <link rel="stylesheet" href="<?php echo ROUTE_URL?>/fontawesome/css/all.css">
-    
+    <link rel="stylesheet" href="<?php echo ROUTE_URL?>/css/reset.css">
     <link rel="stylesheet" href="<?php echo ROUTE_URL?>/css/menu.css">
     <link rel="stylesheet" href="<?php echo ROUTE_URL?>/css/tabla.css">
     <link rel="stylesheet" href="<?php echo ROUTE_URL?>/css/paginacion.css">
@@ -44,7 +45,7 @@
               <?php endif?>
 
                 <div class="botones-header">
-                <p class="menuCSS3"><a style="color: white; :hover{color : #000;}"href="<?php echo  ROUTE_URL?>/login/logout"><?php print_r($_SESSION['user']->username)?> <i class="fas fa-walking" style="font-size: 170%;"></i></a></p>     
+                <p class="menuCSS3"><a style="color: white; :hover{color : #000;}"href="<?php echo  ROUTE_URL?>/login/logout"><?php print_r($_SESSION['user']->username)?> <i class="fas fa-sign-out-alt" style="font-size: 150%;"></i></a></p>     
                 </div>
 
             </header>
@@ -54,9 +55,12 @@
                     class="<?php echo $var = ($parameters['menu'] == 'Inicio')? 'active': ''?>"><i
                         class="fas fa-home"></i>Inicio</a>
                 <a href="#"><i class="fas fa-hand-paper"></i>Manipúlador</a>
-                <a href="#"><i class="fas fa-warehouse"></i>Establecimiento</a>
+                <a href="#"><i class="fas fa-file-medical"></i>Examenes</a>
+                <a href="#"><i class="fas fa-clipboard-list"></i>Asistencia</a>
+                <a href="#"><i class="fas fa-address-card"></i>Credencial</a>
+                <a href="#"><i class="fas fa-store"></i>Establecimiento</a>
                 <a href="#"><i class="fas fa-user-secret"></i>Inspección</a>
-                <a href="#"><i class="fas fa-clipboard-check"></i>Reporte</a>
+                <a href="#"><i class="fas fa-clipboard-check"></i>Bitacora</a>
                 <!-- llamando al controlador -->
                 <a href="<?php echo ROUTE_URL?>/usuarios"
                     class="<?php echo $var=($parameters['menu'] == 'usuarios')? 'active': ''?>"><i

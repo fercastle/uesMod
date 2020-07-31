@@ -9,7 +9,7 @@
                     <h3>Ver usuario</h3>
                     <i class="fas fa-user"></i>
                 </div>
-
+                
                 <form action="" id="form-usuario" class="form">
                     <div class="form-control">
                         <label for="nombre">Nombre</label>

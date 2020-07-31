@@ -13,7 +13,7 @@
                 <form action="<?php echo ROUTE_URL?>/usuarios/actualizarUsuario/<?php echo $parameters['usuario']?>" method= "post" id="form-usuario" class="form">
                     <div class="form-control <?php echo $var = (isset($parameters['errores']['nombre']['form-control']))?$parameters['errores']['nombre']['form-control']:''?>">
                         <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombreusuario" value="<?php echo $var = (isset($parameters['errores']['nombre']['text']))?$parameters['errores']['nombre']['text']:''?>">
+                        <input  onkeypress = " return soloLetras(event)" type="text" id="nombre" name="nombreusuario" value="<?php echo $var = (isset($parameters['errores']['nombre']['text']))?$parameters['errores']['nombre']['text']:''?>">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <?php if ($parameters['errores']): ?>
@@ -24,7 +24,7 @@
 
                     <div class="form-control <?php echo $var = (isset($parameters['errores']['apellido']['form-control']))?$parameters['errores']['apellido']['form-control']:''?>">
                         <label for="Apellido">Apellido</label>
-                        <input type="text" id="apellido" name='apellidousuario' value="<?php echo $var = (isset($parameters['errores']['apellido']['text']))?$parameters['errores']['apellido']['text']:''?>"> 
+                        <input  onkeypress = " return soloLetras(event)" type="text" id="apellido" name='apellidousuario' value="<?php echo $var = (isset($parameters['errores']['apellido']['text']))?$parameters['errores']['apellido']['text']:''?>"> 
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <?php if ($parameters['errores']): ?>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-control" style="display: none">
                         <label for="usuario"></label> 
-                        <input id="usuario" type="text" name="username1" value="<?php echo $var = (isset($parameters['errores']['usuario1']['text']))?$parameters['errores']['usuario1']['text']:''?>"> 
+                        <input type="text" name="username1" value="<?php echo $var = (isset($parameters['errores']['usuario1']['text']))?$parameters['errores']['usuario1']['text']:''?>"> 
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small></small>
@@ -121,7 +121,7 @@
 
                     <div class="form-control <?php echo $var = (isset($parameters['errores']['usuario']['form-control']))?$parameters['errores']['usuario']['form-control']:''?>">
                         <label for="usuario">Usuario</label> 
-                        <input id="usuario" type="text" name="username" value="<?php echo $var = (isset($parameters['errores']['usuario']['text']))?$parameters['errores']['usuario']['text']:''?>"> 
+                        <input  onkeypress = " return soloLetras(event)" id="usuario" type="text" name="username" value="<?php echo $var = (isset($parameters['errores']['usuario']['text']))?$parameters['errores']['usuario']['text']:''?>"> 
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <?php if ($parameters['errores']): ?>

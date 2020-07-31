@@ -5,7 +5,7 @@ Options -Multiviews
 #Habilitamos la reescrituras 
 RewriteEngine On
 #indicamos nuestra ruta base 
-RewriteBase /UES/public
+RewriteBase /ues/public
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 #Si el archivo al que se requiere acceser no existe 
