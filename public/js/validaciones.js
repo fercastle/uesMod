@@ -1,3 +1,25 @@
+//funcion para no poner numero en las cajas de texto se agrega a los input la expresion de abajo
+// onkeypress = " return soloLetras(event)"
+    function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+
+
 (function(){	
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -9,7 +31,7 @@
 	//Declarando las variables por medio de id
 	const nombre = document.getElementById('nombre');
 	const apellido = document.getElementById('apellido');
-	//const fechaNacimiento= document.getElementById('fechaNacimiento');
+	const fechaNacimiento= document.getElementById('fechaNacimiento');
 	const dui = document.getElementById('dui');
 	const telefono = document.getElementById('telefono');
 	const direccion = document.getElementById('direccion');
@@ -22,11 +44,10 @@
 		e.preventDefault();
 		validarNombre();
 		validarApellido();
-		//validarFechaNacimiento();
+		validarFechaNacimiento();
 		validarDui();
 		validarTelefono();
 		validarDireccion();
-
 		validarUsuario();
 		validarPassword1();
 		validarPassword2();
@@ -39,6 +60,8 @@
 
 		if(nombreValue == '' || nombreValue == null) 
 			setErrorFor(nombre, 'Ingrese un nombre');
+		else if(nombreValue.length < 3)
+			setErrorFor(nombre, 'Ingrese mas de 3 caracteres');
 		else if(nombreValue.length > 50)
 			setErrorFor(nombre, 'Ingrese menos de 50 caracteres');
 		else 
@@ -50,6 +73,8 @@
 
 		if(apellidoValue == '' || apellidoValue == null) 
 			setErrorFor(apellido, 'Ingrese un apellido');
+		else if(apellidoValue.length < 3)
+			setErrorFor(apellido, 'Ingrese mas de 3 caracteres');
 		else if(apellidoValue.length > 50)
 			setErrorFor(apellido, 'Ingrese menos de 50 caracteres');
 		else 
@@ -92,8 +117,10 @@
 
 		if(direccionValue == '' || direccionValue == null) 
 			setErrorFor(direccion, 'Ingrese una direccion');
-		else if(direccionValue.length > 50)
-			setErrorFor(direccion, 'Ingrese menos de 50 caracteres');
+		else if(direccionValue.length < 5)
+			setErrorFor(direccion, 'Ingrese mas de 5 caracteres');
+		else if(direccionValue.length > 100)
+			setErrorFor(direccion, 'Ingrese menos de 100 caracteres');
 		else 
 			setSuccessFor(direccion);
 	} 
@@ -103,6 +130,8 @@
 
 		if(usuarioValue == '' || usuarioValue == null) 
 			setErrorFor(usuario, 'Ingrese un usuario');
+		else if(usuarioValue.length < 3)
+			setErrorFor(usuario, 'Ingrese mas de 3 caracteres');
 		else if(usuarioValue.length > 50)
 			setErrorFor(usuario, 'Ingrese menos de 50 caracteres');
 		else 
@@ -114,7 +143,7 @@
 
 		if(password1.value == '' || password1.value == null) 
 			setErrorFor(password1, 'Ingrese una contraseña');
-		/*else if(password1Value != password2Value)
+			/*else if(password1Value != password2Value)
 			setErrorFor(password2, 'Las contraseñas no coinciden');
 			*/
 			else
@@ -133,7 +162,6 @@
 			setSuccessFor(password2);
 	} 
 
-
 	function setErrorFor(input, message) {
 		const formControl = input.parentElement;
 		const small = formControl.querySelector('small');
@@ -141,12 +169,10 @@
 		small.innerText = message;
 	}
 
-
 	function setSuccessFor(input) {
 		const formControl = input.parentElement;
 		formControl.className = 'form-control success';
 	}
-
 
 	//Mascaras de texto usuario
 	$(document).ready(function(){

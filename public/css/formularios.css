@@ -68,7 +68,7 @@
 }
 
 .contact-wrapper >*{
-	padding: 1em;
+	padding: 0.1em;
 }
 
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
@@ -90,8 +90,9 @@
 
 .form-control{
 	position: relative;
-	margin:8px;
-	padding: 0.3em;
+	margin: 6px;
+	padding-left: 0.4em;
+	padding-top: 0.7em;
 }
 
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
@@ -124,7 +125,7 @@
 
 .contact-form select:focus {  
     border: 1px solid #0c81bb; 
-}   
+} 
  
 /* ----------------------------------------------------------------- */
 
@@ -192,12 +193,29 @@
 
 .form-control small{
 	visibility: hidden;
-	position: absolute;
+	position: relative;
+	font-size: 13px;
 }
 
 .form-control.error small{
 	visibility: visible;
 	color: #e74c3c;
+}
+
+/* Para mostrar el icono desactivado de los formularios ver */
+input:disabled{
+    display: inline-block; 
+    cursor: not-allowed;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+select:disabled{
+	display: inline-block; 
+    cursor: not-allowed;
+    text-decoration: none;
+    font-size: 15px;
+
 }
 
 
@@ -234,11 +252,29 @@
 
 	.form-control{
 		position: relative;
+		margin: 6px;
+		padding-left: 0.4em;
+		padding-top: 0.7em;
 	}
 	.form-control i{
 		position: absolute;
 		top: 2.4em;
 		right: 0.9em;
+	}
+
+	/* Para mostrar el icono desactivado de los formularios ver */
+	input:disabled {
+    	display: inline-block; 
+    	cursor: not-allowed;
+    	text-decoration: none;
+    	font-size: 15px;
+	}
+
+	select:disabled{
+		display: inline-block; 
+    	cursor: not-allowed;
+    	text-decoration: none;
+    	font-size: 15px;
 	}
 }
 
@@ -271,6 +307,9 @@
 
 	.form-control{
 		position: relative;
+		margin: 6px;
+		padding-left: 0.4em;
+		padding-top: 0.7em;
 	}
 
 	.caja{
@@ -288,4 +327,20 @@
 	margin-top:-25px;
 	margin-left:21em;*/
 }
+
+	/* Para mostrar el icono desactivado de los formularios ver */
+	input:disabled{
+    	display: inline-block; 
+    	cursor: not-allowed;
+    	text-decoration: none;
+    	font-size: 15px;
+	}
+
+	select:disabled{
+		display: inline-block; 
+    	cursor: not-allowed;
+    	text-decoration: none;
+    	font-size: 15px;
+
+	}
 }

@@ -6,6 +6,7 @@
     <title>Login</title>
 
     <link rel="stylesheet" href="<?php echo ROUTE_URL?>/fontawesome/css/all.css">
+    <link rel="stylesheet" href="<?php echo ROUTE_URL?>/css/reset.css">
     <link rel="stylesheet" href="<?php echo ROUTE_URL?>/css/login.css">
 </head>
 <body>

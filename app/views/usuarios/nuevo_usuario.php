@@ -14,7 +14,7 @@
                     <!-- Clase que contiene tred div para ponerlos en una sola linea los tres  --> 
                     <div class="form-control <?php echo $var = (isset($parameters['errores']['nombre']['form-control']))?$parameters['errores']['nombre']['form-control']:''?>">
                         <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombreusuario" value="<?php echo $var = (isset($parameters['errores']['nombre']['text']))?$parameters['errores']['nombre']['text']:''?>">
+                        <input onkeypress = " return soloLetras(event)" type="text" id="nombre" name="nombreusuario" value="<?php echo $var = (isset($parameters['errores']['nombre']['text']))?$parameters['errores']['nombre']['text']:''?>">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <?php if ($parameters['errores']): ?>
@@ -25,7 +25,7 @@
 
                     <div class="form-control <?php echo $var = (isset($parameters['errores']['apellido']['form-control']))?$parameters['errores']['apellido']['form-control']:''?>">
                         <label for="Apellido">Apellido</label>
-                        <input type="text" id="apellido" name='apellidousuario' value="<?php echo $var = (isset($parameters['errores']['apellido']['text']))?$parameters['errores']['apellido']['text']:''?>"> 
+                        <input onkeypress = " return soloLetras(event)" type="text" id="apellido" name='apellidousuario' value="<?php echo $var = (isset($parameters['errores']['apellido']['text']))?$parameters['errores']['apellido']['text']:''?>"> 
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <?php if ($parameters['errores']): ?>
@@ -100,7 +100,7 @@
 
                     <div class="form-control <?php echo $var = (isset($parameters['errores']['usuario']['form-control']))?$parameters['errores']['usuario']['form-control']:''?>">
                         <label for="usuario">Usuario</label> 
-                        <input id="usuario" type="text" name="username" value="<?php echo $var = (isset($parameters['errores']['usuario']['text']))?$parameters['errores']['usuario']['text']:''?>"> 
+                        <input onkeypress = " return soloLetras(event)" id="usuario" type="text" name="username" value="<?php echo $var = (isset($parameters['errores']['usuario']['text']))?$parameters['errores']['usuario']['text']:''?>"> 
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <?php if ($parameters['errores']): ?>
